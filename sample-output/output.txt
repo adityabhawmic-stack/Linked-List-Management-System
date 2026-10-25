@@ -1,0 +1,171 @@
+LINKED LIST MANAGEMENT SYSTEM - SAMPLE OUTPUT
+Language: C++
+(Menus omitted for brevity. Lines starting with > are operations performed.)
+
+==================================================
+SINGLY LINKED LIST
+==================================================
+
+--- Empty list edge cases ---
+> Display
+NULL
+> Delete from Beginning
+invalid
+> Find Maximum
+list is empty
+
+--- Build the list (insert at end into an empty list) ---
+> Insert at End: 40
+> Insert at End: 10
+> Insert at End: 30
+> Insert at End: 20
+> Insert at End: 50
+> Display
+40 --> 10 --> 30 --> 20 --> 50 --> NULL
+> Count Nodes
+Number of nodes: 5
+
+--- Sort and Reverse ---
+> Sort
+> Display
+10 --> 20 --> 30 --> 40 --> 50 --> NULL
+> Reverse
+> Display
+50 --> 40 --> 30 --> 20 --> 10 --> NULL
+
+--- Max, Min, Middle, Search ---
+> Find Maximum
+max is 50
+> Find Minimum
+min is 10
+> Find Middle Element
+the middle element is: 30
+> Search: 20
+found at position 4
+> Search: 99
+no match found
+
+--- Insert at Position ---
+> Insert at Position: position 3, value 99
+> Display
+50 --> 40 --> 99 --> 30 --> 20 --> 10 --> NULL
+> Insert at Position: position 10, value 5
+invalid
+
+--- Delete operations ---
+> Delete by Value: 99
+> Display
+50 --> 40 --> 30 --> 20 --> 10 --> NULL
+> Delete by Value: 100
+not found
+> Delete from Position: 2
+> Display
+50 --> 30 --> 20 --> 10 --> NULL
+> Delete from Position: 9
+invalid
+
+--- Update ---
+> Update: 30 to 35
+the data has been updated
+> Update: 99 to 1
+value not found
+> Display
+50 --> 35 --> 20 --> 10 --> NULL
+
+--- Remove Duplicates ---
+> Insert at End: 50
+> Insert at End: 20
+> Display
+50 --> 35 --> 20 --> 10 --> 50 --> 20 --> NULL
+> Remove Duplicates
+> Display
+50 --> 35 --> 20 --> 10 --> NULL
+
+--- Delete from End and Beginning ---
+> Delete from End
+> Delete from Beginning
+> Display
+35 --> 20 --> NULL
+
+==================================================
+DOUBLY LINKED LIST
+==================================================
+
+--- Empty list edge cases ---
+> Display Forward
+NULL
+> Delete from End
+invalid
+
+--- Build the list ---
+> Insert at End: 10
+> Insert at End: 20
+> Insert at End: 30
+> Insert at End: 40
+> Display Forward
+NULL <- 10 <-> 20 <-> 30 <-> 40 -> NULL
+> Display Backward
+NULL <- 40 <-> 30 <-> 20 <-> 10 -> NULL
+
+--- Insert operations ---
+> Insert at Beginning: 5
+> Insert at Position: position 3, value 15
+> Display Forward
+NULL <- 5 <-> 10 <-> 15 <-> 20 <-> 30 <-> 40 -> NULL
+> Display Backward
+NULL <- 40 <-> 30 <-> 20 <-> 15 <-> 10 <-> 5 -> NULL
+
+--- Delete operations ---
+> Delete from End
+> Delete by Value: 15
+> Display Forward
+NULL <- 5 <-> 10 <-> 20 <-> 30 -> NULL
+> Display Backward
+NULL <- 30 <-> 20 <-> 10 <-> 5 -> NULL
+
+--- Reverse and Sort ---
+> Reverse
+> Display Forward
+NULL <- 30 <-> 20 <-> 10 <-> 5 -> NULL
+> Display Backward
+NULL <- 5 <-> 10 <-> 20 <-> 30 -> NULL
+> Sort
+> Display Forward
+NULL <- 5 <-> 10 <-> 20 <-> 30 -> NULL
+
+--- Count, Middle, Max, Min ---
+> Count Nodes
+Number of nodes: 4
+> Find Middle Element
+the middle element is: 10
+> Find Maximum
+max is 30
+> Find Minimum
+min is 5
+
+--- Remove Duplicates ---
+> Insert at End: 10
+> Insert at End: 30
+> Display Forward
+NULL <- 5 <-> 10 <-> 20 <-> 30 <-> 10 <-> 30 -> NULL
+> Remove Duplicates
+> Display Forward
+NULL <- 5 <-> 10 <-> 20 <-> 30 -> NULL
+
+--- Invalid position ---
+> Insert at Position: position 9, value 1
+invalid
+
+==================================================
+COMPARE SINGLY VS DOUBLY
+==================================================
+Pointers per node      : Singly = 1 (next)          | Doubly = 2 (prev, next)
+Memory per node        : Singly = less              | Doubly = more
+Traversal              : Singly = forward only      | Doubly = forward and backward
+Insert at beginning    : O(1) in both
+Insert at end          : Singly O(n) without tail   | Doubly O(1) with tail
+Delete from end        : Singly O(n)                | Doubly O(1) with tail
+Delete a given node    : Singly needs previous node | Doubly uses prev directly
+Reverse                : Singly flips next          | Doubly swaps prev and next
+Search / Count / Max   : O(n) in both
+Implementation         : Singly = simpler           | Doubly = more pointer updates
